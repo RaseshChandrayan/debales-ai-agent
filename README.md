@@ -23,10 +23,19 @@ Implements a router to direct traffic into three specific paths:
 RAG: For dedicated Debales-specific information.
 SERP: For general or real-time external knowledge.
 Hybrid: For complex queries requiring a synthesis of both sources.
-
-
-
 Implements strict fallback protocols to prevent hallucinations.
+
+## How it Works
+
+1. User enters a query
+2. Query is classified using LangGraph:
+   - Debales-related → RAG
+   - General → SERP API
+   - Mixed → Both
+3. Relevant data is retrieved
+4. Final answer is formatted with sources
+
+
 
 Project Structure
 
@@ -36,3 +45,8 @@ rag_tool.py → RAG retrieval
 serp_tool.py → SERP API tool
 agent.py → LangGraph workflow
 main.py → CLI interface
+
+## Run Order (IMPORTANT)
+
+1. python ingest.py
+2. python main.py
