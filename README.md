@@ -29,3 +29,10 @@ Hybrid: For complex queries requiring a synthesis of both sources.
 Implements strict fallback protocols to prevent hallucinations.
 
 Project Structure
+
+scraper.py → Scrapes website
+ingest.py → Creates vector DB
+rag_tool.py → RAG retrieval
+serp_tool.py → SERP API tool
+agent.py → LangGraph workflow
+main.py → CLI interface
